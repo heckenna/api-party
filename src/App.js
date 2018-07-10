@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, NavLink,  Switch } from 'react-router-dom';
 
 import './App.css';
+import Github from './Github';
 
 
 
@@ -24,8 +25,12 @@ class App extends Component {
             <NavLink to="/github">GitHub API</NavLink>
           </li>
         </ul>
-
-        <Route path="/github" render={() => <h3>GitHub!</h3>}/>
+        <Switch>
+          <Route path="/github" Component={Githu}/>
+          <Route render={() => (
+              <p> To get started, click one of the links above.</p>
+            )}/>
+        </Switch>
       </div>
     );
   }
